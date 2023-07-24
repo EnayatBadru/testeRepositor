@@ -1,0 +1,191 @@
+#header {
+    padding: 70px 40px;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 3;
+    transition: var(--trs2);
+  }
+  
+  .img-logo{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .img-logo img{
+    width: 100%;
+    height: 100%;
+  }
+  
+  .cont-logo{
+    background: url(../img/eiffel-tower.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    width: 50px;
+    height: 50px;
+  }
+  
+  #header .logo{
+      letter-spacing: 2px;
+      font-size: 1.4em;
+  }
+  
+  #header.sticky {
+    background: var(--clr1);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+    padding: 20px 10px;
+    transition: var(--trs2);
+  }
+  
+  #header nav ul li:not(:last-child) {
+    padding-right: 45px;
+  }
+  
+  #header a {
+    color: var(--clr3);
+    font-size: 1.1em;
+    text-shadow: 0 0 2px transparent;
+  }
+  
+  #header a:hover {
+    color: #fff;
+    text-shadow: 0 0 2px rgba(0,0,0,.6);
+  }
+  
+  #header.sticky a,
+  #header.sticky button {
+    color: var(--clr2);
+  }
+  
+  #header .btn-mobile {
+    display: none;
+  }
+  
+  @media (max-width: 700px) {
+    #header ul {
+      position: absolute;
+    }
+  
+    #header nav ul li:not(:last-child) {
+      padding-right: 0;
+    }
+  
+    #header .modal {
+      display: none; /* desabilitando */
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateY(170px);
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.3);
+      transition: var(--trs1);
+    }
+  
+    #header .modal.active {
+      display: flex;
+    }
+  
+    #header.sticky .modal {
+      transform: translateY(61.5px);
+      transition: var(--trs1);
+    }
+  
+    .modal ul {
+      position: absolute;
+      width: 100vw;
+      height: 250px;
+      background: var(--clr1);
+      flex-direction: column;
+      justify-content: flex-start;
+      border-top: 2px solid transparent;
+      gap: 1em;
+      transition: var(--trs2);
+    }
+  
+    .modal ul a {
+      color: var(--clr2) !important;
+      transition: var(--trs2);
+    }
+  
+    #header.sticky .modal ul {
+      border-top: 2px solid var(--clr2);
+      transition: var(--trs2);
+    }
+  
+    #header.sticky .modal ul a {
+      color: var(--clr2) !important;
+      transition: var(--trs2);
+    }
+  
+    #header .btn-mobile {
+      display: flex; /*desbloquear btn*/
+      flex-direction: column;
+      justify-content: center;
+  
+      background: none;
+      outline: none;
+      border: none;
+      width: 20px;
+      height: 15px;
+      cursor: pointer;
+      position: relative;
+      transition: var(--trs2);
+    }
+  
+    #header .btn-mobile .toggle-menu {
+      width: 100%;
+      height: 1px;
+      background: var(--clr3);
+  
+      position: absolute;
+      top: 0;
+      transition: var(--trs2);
+    }
+  
+    #header .btn-mobile::after,
+    #header .btn-mobile::before {
+      content: "";
+      width: 100%;
+      height: 1px;
+      background: var(--clr3);
+      transition: var(--trs2);
+    }
+  
+    #header .btn-mobile::after {
+      position: absolute;
+      top: 50%;
+    }
+  
+    #header .btn-mobile::before {
+      position: absolute;
+      bottom: 0;
+    }
+  
+    #header.sticky .btn-mobile .toggle-menu,
+    #header.sticky .btn-mobile::after,
+    #header.sticky .btn-mobile::before {
+      background: var(--clr3);
+      transition: var(--trs2);
+    }
+  
+    .btn-mobile.burguer::after {
+      transform: translateX(-25px);
+      opacity: 0;
+      transition: var(--trs2);
+    }
+  
+    .btn-mobile.burguer .toggle-menu {
+      /* top */
+      transform: rotate(50deg) translateY(10px);
+      transition: var(--trs2);
+    }
+    .btn-mobile.burguer::before {
+      /* bottom */
+      transform: rotate(-50deg) translateY(-10px);
+      transition: var(--trs2);
+    }
+  }

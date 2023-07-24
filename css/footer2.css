@@ -1,0 +1,24 @@
+#footer{
+    width: 100vw;
+    height: auto;
+    padding: 10px;
+    background: #333;
+}
+
+.cont-foot{
+    padding: 20px;
+}
+
+#footer .copy p{
+    color: #eee;
+}
+
+#footer .copy p:nth-child(2){
+    font-style: italic;
+}
+
+#footer .contact svg{
+    width: 25px;
+    height: 25px;
+    fill: #eee;
+}
